@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libro – El Principito</title>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body{
+      margin:0; height:100vh; display:flex; justify-content:center; align-items:center;
+      background:#0b1431; font-family:"Crimson Text", serif; color:#2b1f08; overflow:hidden;
+    }
+    .book{
+      width:90%; max-width:800px; height:90%; position:relative;
+      perspective:2000px;
+    }
+    .page{
+      width:100%; height:100%; background:#fff7e6; position:absolute;
+      top:0; left:0; transform-origin:left center; transition:transform 1s;
+      box-shadow:0 4px 10px rgba(0,0,0,.3);
+      border-radius:8px; overflow:auto;
+      padding:40px; box-sizing:border-box;
+    }
+    .page.cover{
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      background:linear-gradient(135deg, #f9d29d, #ffd59e);
+      font-family:"Great Vibes", cursive; color:#5a3300;
+      background-size:contain; background-repeat:no-repeat; background-position:center bottom;
+    }
+    .page.cover h1{font-size:48px; margin:0; text-shadow:1px 1px 2px #fff;}
+    .page.cover h3{font-size:24px; margin-top:10px; font-family:"Crimson Text", serif;}
+    .page.backcover{
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      background:linear-gradient(135deg, #ffd59e, #f9d29d);
+      font-family:"Crimson Text", serif; color:#5a3300;
+      text-align:center;
+     
+      background-size:contain; background-repeat:no-repeat; background-position:center bottom;
+    }
+    .page.backcover h2{font-size:28px; margin-bottom:10px;}
+    .page.backcover p{font-size:18px; line-height:1.6;}
+    .page h2{font-family:"Great Vibes", cursive; font-size:32px; margin-bottom:20px; color:#d35400;}
+    .page p{font-size:18px; line-height:1.6;}
+    .controls{
+      position:absolute; bottom:20px; left:50%; transform:translateX(-50%);
+      display:flex; gap:20px;
+    }
+    button{
+      font-size:18px; padding:10px 16px; border:none; border-radius:6px;
+      background:#fff7e6; color:rgb(150, 118, 118); cursor:pointer;
+      transition:background .3s;
+    }
+    button:hover{background:#fff7e6;}
+
+    .sparkle{
+      position:absolute; width:6px; height:6px; background:white;
+      border-radius:50%; opacity:0; pointer-events:none;
+      animation:sparkleAnim 0.8s forwards;
+    }
+
+    @keyframes sparkleAnim{
+      0% {opacity:1; transform:translate(0,0) scale(1);}
+      100% {opacity:0; transform:translate(var(--x), var(--y)) scale(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="book" id="book">
+    <section class="page cover">
+      <h1>libro de cartas </h1>
+      <h3>con mucho amor, para mi principito </h3>
+      <img src="imagenes/1.png" alt="Portada scrapbook" style="max-width:50%;">
+    </section>
+    
+    <section class="page"><h2>antes de comenzar </h2><p>Antes de comenzar a hojear estas páginas, quiero que sepas que cada palabra está escrita pensando en ti, en lo que hemos vivido y en todo lo que nos queda por vivir. Este no es solo un scrapbook, es nuestro pedacito de eternidad.
+
+Aquí encontrarás pequeños detalles que quiero guardar para siempre. Cada hoja es un ‘te amo’ disfrazado de colores, fotos y letras, porque a veces lo que siento por ti no cabe en una sola frase.
+
+Gracias por ser mi refugio en los días difíciles y mi motivo de alegría en los días más simples. No importa cuánto tiempo pase, siempre quiero que al abrir estas páginas recuerdes que lo mejor de mi vida eres tú.
+
+    </p><p>Con todo mi amor, Say </p> 
+</section>
+    
+    <section class="page"><h2> 365 días juntos</h2><p>Cada día, cada minuto y cada segundo me enamoro más de ti.
+Simplemente eres todo lo que quiero para mi vida. El día de hoy no me imagino sin ti, porque te has convertido en algo esencial, en alguien que ya forma parte de mí. Eres mi felicidad.
+
+Sé que no ha sido fácil llegar hasta aquí. Hemos tenido discusiones, momentos en los que estuvimos a nada de decir adiós para siempre… pero incluso en esos instantes supimos que no podíamos soltar lo que hemos construido, porque somos parte uno del otro.
+
+Nos hemos completado de maneras que nunca imaginamos. Somos polos opuestos, sí, pero precisamente por eso encajamos: tú me equilibras, yo te sostengo.
+Mi objetivo es simple pero profundo: hacerte feliz, inspirarte a ser la mejor versión de ti, quererte de la manera correcta y acompañarte en cada meta, en cada sueño, en cada paso de tu camino.
+
+Hoy celebramos 365 días juntos… y aunque ha pasado un año, siento que esto apenas comienza. Que nos esperan miles de días más, millones de instantes por vivir, abrazos por dar y recuerdos por crear.
+
+Gracias por ser mi refugio, mi alegría y mi razón de sonreír.
+Gracias por elegirme cada día.
+
+Te amo, siempre.</p>
+</section>
+    <section class="page"><h2>rayito de sol</h2><p>Desde que llegaste a mi vida, todo tiene un brillo distinto.
+Eres como ese rayito de sol que aparece en medio de un día gris, que calienta el corazón y lo hace sentir en casa.
+Tú eres esa luz que me guía cuando siento que me pierdo, esa fuerza que me recuerda que la vida vale la pena cuando se comparte con alguien especial.
+
+No eres perfecto, y yo tampoco lo soy… pero juntos hemos aprendido a sostenernos, a crecer, a levantarnos incluso cuando la tormenta parecía más fuerte que nosotros. Y aun así, aquí estamos: brillando, porque tu luz y la mía se encontraron.
+
+Quiero que sepas que me haces feliz de maneras que nunca imaginé. Que cada sonrisa tuya ilumina rincones de mí que yo misma desconocía. Que eres mi paz y mi impulso, mi refugio y mi aventura.
+
+Eres mi rayito de sol.
+Ese que no se apaga, que me calienta incluso en la distancia y que me recuerda cada día por qué te elijo.
+
+Te amo, con la certeza de quien encontró su luz en otro corazón.</p></section>
+    <section class="page"><h2>mi pieza faltante</h2><p>Antes de ti, sentía que algo me faltaba, como si dentro de mí hubiera un espacio vacío imposible de llenar. Caminaba, reía, soñaba… pero siempre había un hueco, una ausencia que no sabía nombrar.
+
+Entonces llegaste tú.
+Y todo cobró sentido.
+Tu mirada encajó con la mía como dos piezas que estaban destinadas a encontrarse. Tu risa se convirtió en la melodía que faltaba en mi canción. Tus abrazos, en el lugar seguro donde mi corazón aprendió a descansar.
+
+Eres mi pieza faltante. Esa parte que completó mi historia, que me enseñó que el amor no es depender, sino compartir; no es poseer, sino acompañar; no es buscar la perfección, sino abrazar lo que somos, con nuestras diferencias y nuestras luces.
+
+Hoy entiendo que sin ti no estaría incompleta, pero contigo estoy completa de una manera hermosa.
+No porque me falte algo sin ti, sino porque contigo todo tiene más sentido, más color, más vida.
+
+Eres, simplemente, la pieza que hacía falta para que mi rompecabezas se viera completo.
+
+Te amo.</p></section>
+    <section class="page"><h2>Cosas que amo de ti </h2><p><ul class="lista-amor">
+  <li>La forma en que me miras, como si yo fuera lo más importante en ese instante.</li>
+  <li>Tu risa, que siempre logra contagiarme aunque yo esté enojada o triste.</li>
+  <li>Cómo me haces sentir segura y en paz cuando estoy en tus brazos.</li>
+  <li>Tu manera de esforzarte por tus sueños, aunque a veces dudes de ti.</li>
+  <li>Lo paciente que puedes ser conmigo cuando me complico de más.</li>
+  <li>Tus ocurrencias y bromas inesperadas que siempre logran sacarme una sonrisa.</li>
+  <li>Que me escuchas, incluso en mis silencios.</li>
+  <li>Cómo me cuidas en los detalles pequeños que para otros pasarían desapercibidos.</li>
+  <li>Que eres tú mismo, sin máscaras, cuando estás conmigo.</li>
+  <li>Lo mucho que me inspiras a crecer, a mejorar y a creer en mí.</li>
+  <li>Tus abrazos, que son mi lugar favorito en el mundo.</li>
+  <li>Que me eliges cada día, incluso en los momentos difíciles.</li>
+  <li>Lo increíble que eres sin darte cuenta.</li>
+</ul>
+.</p></section>
+   
+    <section class="page"><h2>razones por las que eres mi persona favorita </h2><p>
+    Hoy quiero regalarte algo diferente: una lista con solo algunas de las
+    razones por las que eres mi persona favorita en el mundo.
+  </p>
+
+  <ol>
+    <li>Porque contigo los días malos se vuelven más llevaderos.</li>
+    <li>Porque tu sonrisa tiene la magia de iluminarlo todo.</li>
+    <li>Porque sabes escucharme incluso cuando no digo nada.</li>
+    <li>Porque haces que lo sencillo se vuelva especial.</li>
+    <li>Porque me enseñas, cada día, lo que significa amar de verdad.</li>
+    <li>Porque contigo descubrí lo hermoso que es tener un hogar en alguien.</li>
+    <li>Porque eres mi apoyo, mi calma y también mi aventura.</li>
+    <li>Porque me aceptas con mis rarezas, y aun así me eliges siempre.</li>
+    <li>Porque contigo aprendí que el amor está en los detalles más pequeños.</li>
+    <li>Porque simplemente eres tú… y no hay nadie más en el mundo que quiera a mi lado.</li>
+  </ol>
+
+  <p>
+    Estas son solo diez razones, pero créeme… la lista es infinita. Te amo.
+  </p>
+</section>
+    <section class="page"><h2>Nuestra cancion </h2><p>Tal vez no tengamos un castillo ni un balcón como Romeo y Julieta, pero lo que tenemos es aún más fuerte: un amor real, auténtico, que construimos día a día. Y mientras esa canción suene, yo siempre recordaré que mi lugar está contigo.</p>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3lSfq8WiDcQXEn8sqHCTZZ?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></section>
+    <section class="page"><h2> razones por las que me enamora cada día mas de ti </h2> 
+  <p>Dicen que con el tiempo el amor se vuelve rutina, pero contigo pasa todo lo contrario. Cada día encuentro una nueva razón para enamorarme más de ti:</p>
+
+  <ul>
+    <li>Tu forma de reír —me contagia la alegría incluso en los peores días.</li>
+    <li>La manera en que me miras —como si en tus ojos hubiera un universo solo para mí.</li>
+    <li>Que recuerdas los pequeños detalles, incluso cuando yo los olvido.</li>
+    <li>Tu apoyo incondicional —me animas a seguir cuando creo que no puedo más.</li>
+    <li>Cómo haces que lo más simple ( una charla, un paseo) se sienta especial.</li>
+    <li>Tu paciencia, tu ternura y también esa locura que me enamora.</li>
+    <li>Que eres auténtico y aun así me eliges cada día.</li>
+  </ul>
+
+  <p>Lo que me enamora de ti no está en los grandes gestos, sino en esas pequeñas cosas que hacen que mi corazón lata más fuerte.</p></section>
+    <section class="page"><h2>si pudiera detener el tiempo</h2><p>Si pudiera detener el tiempo, lo haría cada vez que te abrazo. Para guardar tu risa, tu olor, tu calma. Para recordarme siempre que lo mejor de mi vida está aquí, junto a ti.  <img src="imagenes/2.jpg" alt="Portada scrapbook" style="max-width:40%;"></section>
+    <section class="page"> <h2>Gracias por…</h2>
+    <ul>
+      <li>Escucharme incluso cuando no tengo palabras.</li>
+      <li>Apoyarme en mis locuras y sueños.</li>
+      <li>Abrazarme cuando más lo necesito.</li>
+      <li>Hacerme reír cuando el mundo pesa.</li>
+      <li>Ser tú, auténtico, tierno y divertido</li>
+      <li>Amarme y elegirme cada día.</li>
+    </ul>
+    <p>Cada GRACIAS es un recordatorio de lo afortunado/a que soy de tenerte en mi vida.</p>  <img src="imagenes/3.jpg" alt="Portada scrapbook" style="max-width:50%;"></section>
+    <section class="page"><h2>Lo que quiero cuidar de nosotros</h2>
+    <ul>
+      <li>Nuestra confianza, que es el cimiento de todo.</li>
+      <li>Nuestra complicidad que solo nosotros entendemos.</li>
+      <li>Nuestro respeto, que nos permite ser nosotros mismos.</li>
+      <li>La risa compartida, que convierte los días grises en colores.</li>
+      <li>Cada recuerdo, cada instante juntos, porque construye nuestra historia.</li>
+    </ul>
+    <p>Prometo cuidar estas cosas y recordarnos siempre lo afortunados que somos de tenernos el uno al otro.</p>
+  <img src="imagenes/4.jpg" alt="Portada scrapbook" style="max-width:50%;"></section>
+    <section class="page"><h2>Nuestra promesa</h2>
+    <ul>
+      <li>Reír contigo en los días buenos.</li>
+      <li>Sostenerte en los días difíciles.</li>
+      <li>Soñar juntos sin miedo.</li>
+      <li>Respetarte y escucharte siempre.</li>
+      <li>Amarte incluso cuando el mundo se ponga complicado.</li>
+    </ul>
+    <p>Mi amor por ti no es pasajero; es un compromiso con nosotros, con nuestra felicidad y con todo lo que estamos construyendo juntos. Siempre serás mi lugar seguro y mi aventura favorita.</p> <img src="imagenes/5.jpg" alt="Portada scrapbook" style="max-width:0%;"></section>
+    
+    <section class="page backcover">
+      <h2>Fin</h2>
+      <p>te amo mucho mi Principito ✨</p>
+    </section>
+  </div>
+  <div class="controls">
+    <button id="prev">⟨ Anterior</button>
+    <button id="next">Siguiente ⟩</button>
+  </div>
+
+  <script>
+    const pages = document.querySelectorAll('.page');
+    let current = 0;
+    pages.forEach((p,i)=> p.style.zIndex = pages.length-i);
+
+    function showPage(i){
+      if(i<0||i>=pages.length) return;
+      if(i>current){
+        pages[current].style.transform = "rotateY(-180deg)";
+        current = i;
+      } else {
+        current = i;
+        pages[current].style.transform = "rotateY(0deg)";
+      }
+      createSparkles();
+    }
+
+    document.getElementById('next').onclick = ()=> showPage(current+1);
+    document.getElementById('prev').onclick = ()=> showPage(current-1);
+
+    function createSparkles(){
+      for(let j=0;j<10;j++){
+        const sparkle = document.createElement('div');
+        sparkle.className='sparkle';
+        sparkle.style.left = Math.random()*window.innerWidth+'px';
+        sparkle.style.top = Math.random()*window.innerHeight+'px';
+        sparkle.style.setProperty('--x', (Math.random()*100-50)+'px');
+        sparkle.style.setProperty('--y', (Math.random()*-100)+'px');
+        document.body.appendChild(sparkle);
+        setTimeout(()=> sparkle.remove(),800);
+      }
+    }
+  </script>
+</body>
+</html>
